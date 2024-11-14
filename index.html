@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="date"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Biblioteca Virtual</h1>
+
+        <!-- Função de busca por título -->
+        <h2>Busca por Título</h2>
+        <input type="text" id="buscaTitulo" placeholder="Digite o título do livro...">
+        <button onclick="buscarPorTitulo()">Buscar</button>
+
+        <!-- Função de busca por classificação -->
+        <h2>Busca por Classificação</h2>
+        <input type="text" id="buscaClassificacao" placeholder="Digite a classificação (ex: romance, ficção)...">
+        <button onclick="buscarPorClassificacao()">Buscar</button>
+
+        <!-- Função de busca por 'amor' -->
+        <h2>Busca por 'Amor'</h2>
+        <input type="text" id="buscaAmor" placeholder="Digite palavras-chave relacionadas a 'amor'...">
+        <button onclick="buscarPorAmor()">Buscar</button>
+
+        <!-- Data de Entrega -->
+        <h2>Data de Entrega</h2>
+        <input type="date" id="dataEntrega">
+        <button onclick="confirmarEntrega()">Confirmar Data</button>
+
+        <!-- Data de Saída -->
+        <h2>Data de Saída</h2>
+        <input type="date" id="dataSaida">
+        <button onclick="confirmarSaida()">Confirmar Data</button>
+
+        <!-- Quantos têm no estoque -->
+        <h2>Disponibilidade no Estoque</h2>
+        <input type="text" id="estoqueTitulo" placeholder="Digite o título para ver quantos têm no estoque...">
+        <button onclick="verificarEstoque()">Verificar Estoque</button>
+
+        <!-- Deixe sua opinião -->
+        <h2>Deixe sua Opinião</h2>
+        <textarea id="opniaoUsuario" rows="4" placeholder="Digite sua opinião sobre o livro..."></textarea>
+        <button onclick="enviarOpiniao()">Enviar Opinião</button>
+
+        <!-- Pedido de Livro -->
+        <h2>Faça um Pedido</h2>
+        <input type="text" id="pedidoTitulo" placeholder="Digite o título do livro que deseja pedir...">
+        <button onclick="fazerPedido()">Fazer Pedido</button>
+
+        <!-- Sistema de Cores -->
+        <h2>Escolha a Cor do Fundo</h2>
+        <input type="color" id="corFundo" value="#f4f4f4">
+        <button onclick="mudarCorFundo()">Aplicar Cor</button>
+
+    </div>
+
+    <script>
+        // Funções simuladas em JavaScript (isso será substituído pela lógica do back-end)
+        function buscarPorTitulo() {
+            var titulo = document.getElementById('buscaTitulo').value;
+            alert("Buscando livro com título: " + titulo);
+        }
+
+        function buscarPorClassificacao() {
+            var classificacao = document.getElementById('buscaClassificacao').value;
+            alert("Buscando livros da classificação: " + classificacao);
+        }
+
+        function buscarPorAmor() {
+            var amor = document.getElementById('buscaAmor').value;
+            alert("Buscando livros relacionados a 'amor': " + amor);
+        }
+
+        function confirmarEntrega() {
+            var dataEntrega = document.getElementById('dataEntrega').value;
+            alert("Data de entrega confirmada: " + dataEntrega);
+        }
+
+        function confirmarSaida() {
+            var dataSaida = document.getElementById('dataSaida').value;
+            alert("Data de saída confirmada: " + dataSaida);
+        }
+
+        function verificarEstoque() {
+            var titulo = document.getElementById('estoqueTitulo').value;
+            alert("Verificando estoque para o título: " + titulo);
+        }
+
+        function enviarOpiniao() {
+            var opiniao = document.getElementById('opniaoUsuario').value;
+            alert("Opinião enviada: " + opiniao);
+        }
+
+        function fazerPedido() {
+            var titulo = document.getElementById('pedidoTitulo').value;
+            alert("Pedido feito para o livro: " + titulo);
+        }
+
+        // Função para mudar a cor de fundo da página
+        function mudarCorFundo() {
+            var cor = document.getElementById('corFundo').value;
+            document.body.style.backgroundColor = cor;
+        }
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+
+        <!-- Formulário de Cadastro -->
+        <form id="formCadastro" onsubmit="return validarFormulario()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required>
+
+            <span id="erroSenha" class="error"></span>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script>
+        // Função de validação do formulário
+        function validarFormulario() {
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+            var erroSenha = document.getElementById("erroSenha");
+
+            // Limpar mensagem de erro
+            erroSenha.innerHTML = "";
+
+            // Verificar se as senhas são iguais
+            if (senha !== confirmarSenha) {
+                erroSenha.innerHTML = "As senhas não coincidem.";
+                return false; // Impede o envio do formulário
+            }
+
+            // Se tudo estiver ok, exibe uma mensagem de sucesso
+            alert("Cadastro realizado com sucesso!\nNome: " + nome + "\nE-mail: " + email);
+            return true; // Permite o envio do formulário
+        }index.html( http://  .https://manage.wix.com/dashboard/9a18c255-58af-4b3a-9d1a-82dd88999f9b/bookings/services/templates-catalog?origin=services+empty+state)
+        
+    </script>
+
+</body>
+</html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            padding: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+        .input-group button {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        .book-list, .search-results {
+            margin-top: 20px;
+        }
+        .book-item {
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+        .book-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Biblioteca Virtual</h1>
+
+    <div class="input-group">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" placeholder="Título do livro">
+    </div>
+
+    <div class="input-group">
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" placeholder="Autor do livro">
+    </div>
+
+    <div class="input-group">
+        <label for="ano">Ano de Publicação:</label>
+        <input type="number" id="ano" placeholder="Ano de publicação">
+    </div>
+
+    <div class="input-group">
+        <label for="classificacao">Classificação (1-5):</label>
+        <input type="number" id="classificacao" min="1" max="5" placeholder="Classificação">
+    </div>
+
+    <div class="input-group">
+        <button onclick="cadastrarLivro()">Cadastrar Livro</button>
+    </div>
+
+    <div class="input-group">
+        <label for="buscar">Buscar por título:</label>
+        <input type="text" id="buscar" placeholder="Digite o título do livro">
+        <button onclick="buscarLivro()">Buscar</button>
+    </div>
+
+    <div class="input-group">
+        <button onclick="classificarPorAvaliacao()">Classificar por Avaliação</button>
+        <button onclick="classificarPorAno()">Classificar por Ano</button>
+    </div>
+
+    <div id="resultadosBusca" class="search-results"></div>
+    <div id="livrosCadastrados" class="book-list"></div>
+
+    <script>
+        // Lista de livros
+        let livros = [];
+
+        // Função para cadastrar livro
+        function cadastrarLivro() {
+            const titulo = document.getElementById("titulo").value;
+            const autor = document.getElementById("autor").value;
+            const ano = parseInt(document.getElementById("ano").value);
+            const classificacao = parseFloat(document.getElementById("classificacao").value);
+
+            if (titulo && autor && ano && classificacao) {
+                const livro = { titulo, autor, ano, classificacao };
+                livros.push(livro);
+                alert("Livro cadastrado com sucesso!");
+                mostrarLivros();
+                limparCampos();
+            } else {
+                alert("Por favor, preencha todos os campos.");
+            }
+        }
+
+        // Função para limpar os campos após cadastro
+        function limparCampos() {
+            document.getElementById("titulo").value = '';
+            document.getElementById("autor").value = '';
+            document.getElementById("ano").value = '';
+            document.getElementById("classificacao").value = '';
+        }
+
+        // Função para mostrar os livros cadastrados
+        function mostrarLivros() {
+            const listaLivros = document.getElementById("livrosCadastrados");
+            listaLivros.innerHTML = ''; // Limpa a lista
+
+            livros.forEach(livro => {
+                const div = document.createElement("div");
+                div.classList.add("book-item");
+                div.innerHTML = `
+                    <span>Título:</span> ${livro.titulo}<br>
+                    <span>Autor:</span> ${livro.autor}<br>
+                    <span>Ano:</span> ${livro.ano}<br>
+                    <span>Classificação:</span> ${livro.classificacao}<br><br>
+                `;
+                listaLivros.appendChild(div);
+            });
+        }
+
+        // Função para buscar livro pelo título
+        function buscarLivro() {
+            const busca = document.getElementById("buscar").value.toLowerCase();
+            const resultados = livros.filter(livro => livro.titulo.toLowerCase().includes(busca));
+
+            const resultadosBusca = document.getElementById("resultadosBusca");
+            resultadosBusca.innerHTML = ''; // Limpa os resultados anteriores
+
+            if (resultados.length > 0) {
+                resultados.forEach(livro => {
+                    const div = document.createElement("div");
+                    div.classList.add("book-item");
+                    div.innerHTML = `
+                        <span>Título:</span> ${livro.titulo}<br>
+                        <span>Autor:</span> ${livro.autor}<br>
+                        <span>Ano:</span> ${livro.ano}<br>
+                        <span>Classificação:</span> ${livro.classificacao}<br><br>
+                    `;
+                    resultadosBusca.appendChild(div);
+                });
+            } else {
+                resultadosBusca.innerHTML = "Nenhum livro encontrado.";
+            }
+        }
+
+        // Função para classificar livros por avaliação
+        function classificarPorAvaliacao() {
+            livros.sort((a, b) => b.classificacao - a.classificacao);
+            mostrarLivros();
+        }
+
+        // Função para classificar livros por ano
+        function classificarPorAno() {
+            livros.sort((a, b) => b.ano - a.ano);
+            mostrarLivros();
+        }
+    </script>
+
+</body>
+</html>
